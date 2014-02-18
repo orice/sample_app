@@ -1,0 +1,24 @@
+Script started on Mon Feb 17 23:34:04 2014
+[?1034hbash-3.2$ rails console
+Loading development environment (Rails 4.0.2)
+[?1034h2.0.0-p353 :001 > require './example_user'
+ => true 
+2.0.0-p353 :002 > example = User.new
+ => #<User:0x007fc265012e60 @name=nil, @email=nil> 
+2.0.0-p353 :003 > exam;[Kple.name
+ => nil 
+2.0.0-p353 :004 > example.name = "Example User"
+ => "Example User" 
+2.0.0-p353 :005 > example.email = "user@example.com"
+ => "user@example.com" 
+2.0.0-p353 :006 > example.formateed[K[K[Kted_email
+ => "Example User <user@example.com>" 
+2.0.0-p353 :007 > user = User.new(name: O[K"Olivia Rice", email: "m[Korice@wisc.edu")
+ => #<User:0x007fc26505e180 @name="Olivia Rice", @email="orice@wisc.edu"> 
+2.0.0-p353 :008 > user.formatted_email
+ => "Olivia Rice <orice@wisc.edu>" 
+2.0.0-p353 :009 > rm em[Kxample_user[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K∂[K
+bash-3.2$ exit
+exit
+
+Script done on Mon Feb 17 23:38:16 2014

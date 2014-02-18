@@ -1,0 +1,110 @@
+/*CSS code*/
+
+ .btn {
+
+  background-color:transparent;
+  border-style:solid;
+  border-color:#FFFFFF;
+  color:#FFFFFF;
+}
+
+#signin{
+  color:#FFFFFF;
+}
+
+ul > .btn {
+  margin-top: 20px;
+  margin-right: 50px;
+}
+
+#jumbo {
+ 
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  color: #000099; 
+  text-align: center;
+  padding-top: 30px;
+
+}
+
+#pkg {
+  
+  margin-left: 25px;
+  font-size: 17px;
+  color: #000099;
+
+}
+
+#pad {
+  margin-left: 20px;
+  color: #000099;
+  border-width: 3px;
+}
+
+#dd {
+  margin-top: 20px;
+  margin-right: 40px;
+  background-color: #FFFFFF;
+  height: 30px;
+  width: 30px;
+}
+
+.dropdown-menu {
+  margin-top: 50px;
+  margin-right: 40px;
+  text-align: center;
+  min-width: 0px;
+}
+.dropdown-menu li > a {
+    color: #000099;
+}
+
+/*References id="name" in HTML*/
+#name{
+    
+    padding-top: 20px;
+    padding-left: 40px;
+    line-height: 35px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    color: #000099;   
+}
+
+/*Background image*/
+body
+
+ { 
+  margin-top: 0;
+  background: url('http://www.pentaxmedical.com/images/banner01-a.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/*References class navbar-link in HTML*/
+li.headerlink{
+  padding-top: 30px;
+  padding-right: 40px;
+  font-size: 105%;
+}
+
+.headerlink a {
+    color: #000099;
+}
+
+  .headerlink a:hover {
+    color:#FFFFFF;
+  }
+
+.btn:hover {
+    background-color:#FFFFFF;
+  }
+#signin:hover {
+  color:#000099;
+}
+
+
+
+
+
+
