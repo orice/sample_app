@@ -1,24 +1,73 @@
-Script started on Mon Feb 17 23:34:04 2014
+Script started on Mon Feb 17 23:42:37 2014
 [?1034hbash-3.2$ rails console
 Loading development environment (Rails 4.0.2)
-[?1034h2.0.0-p353 :001 > require './example_user'
- => true 
-2.0.0-p353 :002 > example = User.new
- => #<User:0x007fc265012e60 @name=nil, @email=nil> 
-2.0.0-p353 :003 > exam;[Kple.name
+[?1034h2.0.0-p353 :001 > def string_shuffle(s)
+2.0.0-p353 :002?>   s.split('').shuffle.join
+2.0.0-p353 :003?>   end
  => nil 
-2.0.0-p353 :004 > example.name = "Example User"
- => "Example User" 
-2.0.0-p353 :005 > example.email = "user@example.com"
- => "user@example.com" 
-2.0.0-p353 :006 > example.formateed[K[K[Kted_email
- => "Example User <user@example.com>" 
-2.0.0-p353 :007 > user = User.new(name: O[K"Olivia Rice", email: "m[Korice@wisc.edu")
- => #<User:0x007fc26505e180 @name="Olivia Rice", @email="orice@wisc.edu"> 
-2.0.0-p353 :008 > user.formatted_email
- => "Olivia Rice <orice@wisc.edu>" 
-2.0.0-p353 :009 > rm em[Kxample_user[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K∂[K
+2.0.0-p353 :004 > string_shuffle("foobar")
+ => "brfaoo" 
+2.0.0-p353 :005 > class String
+2.0.0-p353 :006?>   def shuffle
+2.0.0-p353 :007?>     self.split('').shuffle.join
+2.0.0-p353 :008?>     end
+2.0.0-p353 :009?>   end
+ => nil 
+2.0.0-p353 :010 > "foobar".shuffle
+ => "oafbor" 
+2.0.0-p353 :011 > person1 = { :name[K[K[K[Kfirst => "oli[K[K[KOlivia Rice",[K[K[K[K[K[K[K", :last => "Rice" }
+ => {:first=>"Olivia", :last=>"Rice"} 
+2.0.0-p353 :012 > person2 = { :first => "Lori [K", :last -[K[K[K[K[K[K[K[K[K[K[K[K[K[Kkel[K[K[KKelly", :alst[K[K[K[Klat[Kst => "Hiserodt" }
+ => {:first=>"Kelly", :last=>"Hiserodt"} 
+2.0.0-p353 :013 > person3 = { :first => "Valerie", :last => "Galasi[Ksini" }
+ => {:first=>"Valerie", :last=>"Galassini"} 
+2.0.0-p353 :014 > params [K = {}
+ => {} 
+2.0.0-p353 :015 > params[:father] = {pero[K[K[K[Kperson1}
+SyntaxError: (irb):15: syntax error, unexpected '}', expecting =>
+	from /Users/olivia_rice/.rvm/gems/ruby-2.0.0-p353@railstutorial_rails_4_0/gems/railties-4.0.2/lib/rails/commands/console.rb:90:in `start'
+	from /Users/olivia_rice/.rvm/gems/ruby-2.0.0-p353@railstutorial_rails_4_0/gems/railties-4.0.2/lib/rails/commands/console.rb:9:in `start'
+	from /Users/olivia_rice/.rvm/gems/ruby-2.0.0-p353@railstutorial_rails_4_0/gems/railties-4.0.2/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.0.0-p353 :016 > ^C
+2.0.0-p353 :016 > params[:father] = { :first => "Olivia", :last => "Rice" }[1P[1P[1P[1@:[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[C[C[C[C[C[C[C[1P[1P[1P[1@:[C[C[C[C[C[C[C[C[C
+ => {:first=>"Olivia", :last=>"Rice"} 
+2.0.0-p353 :017 > params[:mother] = (f[K first: "Kelly" [K, last: "Hiserodt" }
+SyntaxError: (irb):17: syntax error, unexpected tLABEL
+params[:mother] = ( first: "Kelly", last: "Hiserodt" }
+                          ^
+(irb):17: syntax error, unexpected ',', expecting ')'
+params[:mother] = ( first: "Kelly", last: "Hiserodt" }
+                                   ^
+(irb):17: syntax error, unexpected tSTRING_DEND, expecting ')'
+	from /Users/olivia_rice/.rvm/gems/ruby-2.0.0-p353@railstutorial_rails_4_0/gems/railties-4.0.2/lib/rails/commands/console.rb:90:in `start'
+	from /Users/olivia_rice/.rvm/gems/ruby-2.0.0-p353@railstutorial_rails_4_0/gems/railties-4.0.2/lib/rails/commands/console.rb:9:in `start'
+	from /Users/olivia_rice/.rvm/gems/ruby-2.0.0-p353@railstutorial_rails_4_0/gems/railties-4.0.2/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.0.0-p353 :018 > params[;[K:mother] {first: "Kelly", last: H[K"Hiserodt"}
+SyntaxError: (irb):18: syntax error, unexpected { arg, expecting end-of-input
+params[:mother] {first: "Kelly", last: "Hiserodt"}
+                 ^
+	from /Users/olivia_rice/.rvm/gems/ruby-2.0.0-p353@railstutorial_rails_4_0/gems/railties-4.0.2/lib/rails/commands/console.rb:90:in `start'
+	from /Users/olivia_rice/.rvm/gems/ruby-2.0.0-p353@railstutorial_rails_4_0/gems/railties-4.0.2/lib/rails/commands/console.rb:9:in `start'
+	from /Users/olivia_rice/.rvm/gems/ruby-2.0.0-p353@railstutorial_rails_4_0/gems/railties-4.0.2/lib/rails/commands.rb:62:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+2.0.0-p353 :019 > ^C
+2.0.0-p353 :019 > params[:father] = { first: "Olivia", last: "Rice" }[C[1P[1P[1P[1P[1P[1P[1@m[1@o[1@t[1@h[1@e[1@r[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1@K[1@e[1@l[1@l[1@y[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1@H[1@i[1@s[1@e[1@r[1@o[1@d[1@t[C[C[C
+ => {:first=>"Kelly", :last=>"Hiserodt"} 
+2.0.0-p353 :020 > params[:father] = { first: "Olivia", last: "Rice" }[1P[1P[1P[1P[1P[1P[1@c[1@h[1@i[1@l[1@d[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1@V[1@a[1@l[1@e[1@r[1@i[1@e[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1@G[1@a[1@l[1@a[1@s[1@i[1P[1@s[1@i[1@n[1@i[C[C[C
+ => {:first=>"Valerie", :last=>"Galassini"} 
+2.0.0-p353 :021 > params["[K:father]
+ => {:first=>"Olivia", :last=>"Rice"} 
+2.0.0-p353 :022 > params[:mother]
+ => {:first=>"Kelly", :last=>"Hiserodt"} 
+2.0.0-p353 :023 > params[:fh[K[Kchild]
+ => {:first=>"Valerie", :last=>"Galassini"} 
+2.0.0-p353 :024 > 
 bash-3.2$ exit
 exit
 
-Script done on Mon Feb 17 23:38:16 2014
+Script done on Mon Feb 17 23:56:14 2014
