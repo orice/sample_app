@@ -12,6 +12,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
+  gem 'launchy'
 end
 
 group :test do
