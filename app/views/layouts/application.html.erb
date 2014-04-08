@@ -10,10 +10,16 @@
   </head>
   <body>
     <%= render 'layouts/header' %>
+
       <div class="container">
         <% flash.each do |key, value| %>
           <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
+      <% if fullpath_request %>
+        <div class="row">
+          <p> Hello </p>
+        </div>
+      <% end %>
         <%= yield %>
         <%= render 'layouts/footer' %>
         <%= debug(params) if Rails.env.development? %>

@@ -25,6 +25,7 @@ module SessionsHelper
     !current_user.nil?
   end
 
+
   def sign_out
     current_user.update_attribute(:remember_token,
                                   User.hash(User.new_remember_token))
@@ -40,5 +41,10 @@ module SessionsHelper
   def store_location
     session[:return_to] = request.url if request.get?
   end
+
+  def fullpath_request
+    request.fullpath == "localhost:3000/siginin"
+  end
+
   
 end

@@ -17,17 +17,20 @@ describe "Authentication" do
         specify { expect(response).to redirect_to(root_url) }
       end
     end
-    
+
     describe "for non-signed-in users" do
       let(:user) { FactoryGirl.create(:user) }
+      it { should_not have_link('Profile', href: user_path(user)) }
+      it { should_not have_link('Settings',    href: edit_user_path(user)) }
     
       describe "when attempting to visit a protected page" do
       
         before do
+          sign_in user
           visit edit_user_path(user)
-          fill_in "Email",    with: user.email
-          fill_in "Password", with: user.password
-          click_button "Sign in"
+          #fill_in "Email",    with: user.email
+          #fill_in "Password", with: user.password
+          #click_button "Sign in"
         end
 
         describe "after signing in" do
@@ -75,7 +78,7 @@ describe "Authentication" do
       end
     end
 
-  end
+  end #end of authorization
 
   describe "signin" do
     before { visit signin_path }
