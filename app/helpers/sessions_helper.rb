@@ -42,9 +42,6 @@ module SessionsHelper
     session[:return_to] = request.url if request.get?
   end
 
-  def fullpath_request
-    request.fullpath == "localhost:3000/siginin"
-  end
 
   
 end
