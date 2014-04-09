@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
   before_filter :signed_in_user_filter, only: [:new, :create]
 
+
   def signed_in_user_filter
     redirect_to root_path, notice: "Already logged in" if signed_in?
   end
@@ -24,9 +25,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User deleted."
-    redirect_to users_url
+    User.find(params[:id]).destroy 
+    unless current_user.admin?
+      
+      flash[:success] = "User deleted." 
+      redirect_to users_url
+    end
   end
 
   def update

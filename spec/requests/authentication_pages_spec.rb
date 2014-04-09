@@ -45,7 +45,7 @@ describe "Authentication" do
               end
 
               it "should render the default (profile) page" do
-                save_and_open_page
+                
                 expect(page).to have_title(user.name)
               end
             end

@@ -46,6 +46,14 @@ describe "User pages" do
             click_link('delete', match: :first)
           end.to change(User, :count).by(-1)
         end
+
+        #it "should not be able to delete own account" do
+        #  expect do 
+        #    click_link('delete')
+        #  end.not_to change(User, :count).by(-1)
+          
+       # end
+
         it { should_not have_link('delete', href: user_path(admin)) }
       end
     end
@@ -60,7 +68,7 @@ describe "User pages" do
   describe "profile page" do
     let(:user) { FactoryGirl.create(:user) }
     before { visit user_path(user) }
-
+ 
     it { should have_content(user.name) }
     it { should have_title(user.name) }
   end
