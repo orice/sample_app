@@ -2,34 +2,36 @@ class UsersController < ApplicationController
   before_action :signed_in_user, only: [:edit, :update, :index, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
-  before_filter :signed_in_user_filter, only: [:new, :create]
-
-
-  def signed_in_user_filter
-    redirect_to root_path, notice: "Already logged in" if signed_in?
-  end
-
-  def show
-    @user = User.find(params[:id])
-  end
-
-  def new
-    @user = User.new
-  end
-
-  def edit
-  end
+ 
 
   def index
     @users = User.paginate(page: params[:page])
   end
+  
+  def show
+    @user = User.find(params[:id])
+  end
+  
+  def new
+    if signed_in?
+      redirect_to(root_url)
+    else
+    @user = User.new
+    end
+  end
 
-  def destroy
-    User.find(params[:id]).destroy 
-    unless current_user.admin?
-      
-      flash[:success] = "User deleted." 
-      redirect_to users_url
+  def create
+    if signed_in?
+      redirect_to(root_url)
+    else
+      @user = User.new(user_params)
+      if @user.save
+        sign_in @user
+        flash[:success] = "Welcome to the Sample App!"
+        redirect_to @user
+      else
+        render 'new'
+     end
     end
   end
 
@@ -42,17 +44,23 @@ class UsersController < ApplicationController
     end
   end
 
-  def create
-      @user = User.new(user_params)
-      if @user.save
-        sign_in @user
-        flash[:success] = "Welcome to the Sample App!"
-        redirect_to @user
-      else
-        render 'new'
-     
+  def destroy
+    user = User.find(params[:id])
+
+    unless current_user?(user)
+      user.destroy
+      flash[:success] = "User deleted." 
+    else
+      flash[:error] = "You can't destroy yourself"
     end
+    redirect_to users_url
   end
+
+  def edit
+  end
+
+
+
 
   private
 
@@ -61,6 +69,8 @@ class UsersController < ApplicationController
 	                                   :password_confirmation)
   end
       # Before filters
+
+
   def admin_user
     redirect_to(root_url) unless current_user.admin?
   end
@@ -76,4 +86,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     redirect_to(root_url) unless current_user?(@user)
   end
+
+
 end
