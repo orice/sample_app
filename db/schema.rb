@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140422130237) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "admin"
+    t.boolean  "admin", default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
